@@ -22,7 +22,15 @@ class WidgetFactory(private val app: Application, private val id: Long) : Remote
     override fun onDestroy() {}
 
 
-    
+    override fun getCount(): Int {
+        val copy = baseNote
+        return if (copy != null) {
+            when (copy.type) {
+                Type.NOTE -> 1
+                Type.LIST -> 1 + copy.items.size
+            }
+        } else 0
+    }
 
     override fun onDataSetChanged() {
         baseNote = database.getBaseNoteDao().get(id)
