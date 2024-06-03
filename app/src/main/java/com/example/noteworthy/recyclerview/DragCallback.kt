@@ -14,10 +14,7 @@ class DragCallback(private val elevation: Float, private val adapter: MakeListAd
     override fun onSwiped(viewHolder: ViewHolder, direction: Int) {}
 
 
-    override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: ViewHolder): Int {
-        val drag = ItemTouchHelper.UP or ItemTouchHelper.DOWN
-        return makeMovementFlags(drag, 0)
-    }
+
 
     override fun onMove(view: RecyclerView, viewHolder: ViewHolder, target: ViewHolder): Boolean {
         val from = viewHolder.adapterPosition
