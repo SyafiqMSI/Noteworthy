@@ -36,10 +36,7 @@ class Preferences private constructor(app: Application) {
 
     fun getWidgetData(id: Int) = preferences.getLong("widget:$id", 0)
 
-    fun deleteWidget(id: Int) {
-        editor.remove("widget:$id")
-        editor.commit()
-    }
+    
 
     fun updateWidget(id: Int, noteId: Long) {
         editor.putLong("widget:$id", noteId)
