@@ -64,7 +64,10 @@ class BaseNoteVH(
             listener.onClick(adapterPosition)
         }
 
-
+        binding.root.setOnLongClickListener {
+            listener.onLongClick(adapterPosition)
+            return@setOnLongClickListener true
+        }
     }
 
     fun updateCheck(checked: Boolean) {
