@@ -16,7 +16,7 @@
         android:appCategory="productivity"
         android:dataExtractionRules="@xml/data_rules"
         android:fullBackupContent="@xml/backup_content"
-        android:icon="@mipmap/noteworthy"
+        android:icon="@drawable/logonotes"
         android:label="@string/app_name"
         android:localeConfig="@xml/locales"
         android:roundIcon="@mipmap/noteworthy_round"
