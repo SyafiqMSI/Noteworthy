@@ -13,10 +13,7 @@ class ActionMode {
     val selectedIds = selectedNotes.keys
     val closeListener = MutableLiveData<Event<Set<Long>>>()
 
-    private fun refresh() {
-        count.value = selectedNotes.size
-        enabled.value = selectedNotes.size != 0
-    }
+
 
     fun add(id: Long, baseNote: BaseNote) {
         selectedNotes[id] = baseNote
