@@ -13,7 +13,7 @@ data class BaseNote(
     val title: String,
     val pinned: Boolean,
     val timestamp: Long,
-   
+    val labels: List<String>,
     val body: String,
     val spans: List<SpanRepresentation>,
     val items: List<ListItem>,
