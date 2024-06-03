@@ -14,10 +14,7 @@ class ColorAdapter(private val listener: ItemListener) : RecyclerView.Adapter<Co
 
     override fun getItemCount() = colors.size
 
-    override fun onBindViewHolder(holder: ColorVH, position: Int) {
-        val color = colors[position]
-        holder.bind(color)
-    }
+    
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorVH {
         val inflater = LayoutInflater.from(parent.context)
