@@ -38,7 +38,7 @@ class ImageDeleteService : Service() {
 
         builder.setContentTitle(getString(R.string.deleting_images))
         builder.setSmallIcon(R.drawable.notification_delete)
-        builder.setProgress(0, 0, true)
+        
         builder.setOnlyAlertOnce(true)
 
         /*
