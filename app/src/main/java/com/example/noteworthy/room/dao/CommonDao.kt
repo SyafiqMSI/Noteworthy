@@ -17,8 +17,7 @@ abstract class CommonDao(private val database: NoteworthyDatabase) {
             labels.remove(value)
             LabelsInBaseNote(baseNote.id, labels)
         }
-        database.getBaseNoteDao().update(labelsInBaseNotes)
-        database.getLabelDao().delete(value)
+
     }
 
     @Transaction
