@@ -76,7 +76,21 @@ class ConfigureWidget : AppCompatActivity(), ItemListener {
     }
 
 
+    override fun onClick(position: Int) {
+        if (position != -1) {
+            val preferences = Preferences.getInstance(application)
+            val noteId = (adapter.currentList[position] as BaseNote).id
+            preferences.updateWidget(id, noteId)
 
+            val manager = AppWidgetManager.getInstance(this)
+            WidgetProvider.updateWidget(this, manager, id, noteId)
+
+            val success = Intent()
+            success.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, id)
+            setResult(RESULT_OK, success)
+            finish()
+        }
+    }
 
     override fun onLongClick(position: Int) {}
 }
