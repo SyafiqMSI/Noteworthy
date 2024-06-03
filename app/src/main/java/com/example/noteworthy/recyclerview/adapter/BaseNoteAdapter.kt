@@ -31,7 +31,12 @@ class BaseNoteAdapter(
 
     private val prettyTime = PrettyTime()
 
-    
+    override fun getItemViewType(position: Int): Int {
+        return when (getItem(position)) {
+            is Header -> 0
+            is BaseNote -> 1
+        }
+    }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (val item = getItem(position)) {
